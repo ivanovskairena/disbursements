@@ -31,7 +31,11 @@ Used https://hexdocs.pm/elixir/main/naming-conventions.html
    
   So you can put period of time you want in order to calculcate the disbursment in the past.
   - Also to make the calculation you need to go to the link http://localhost:4000/calculate or when you go in Disbursements just click on calculate disbursements and they will be calculated in background.
-  -
+  - There are two functions important for doing calculations
+    - calc_amount() that calculate the fee for disbursement
+    - calculate() that is doing the caclulations
+
+
    
 - After you will run the project you can access those pages by url or by jso
 1. Merchants
