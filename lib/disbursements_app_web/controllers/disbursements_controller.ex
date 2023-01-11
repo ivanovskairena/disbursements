@@ -32,8 +32,6 @@ defmodule DisbursementsAppWeb.DisbursementsController do
   def list_by_merchant_week(conn, %{"merchant_id" => merchant_id, "week" => week} = params) do
       disb = Disb.list_by_merchant_week(params)
 
-
-      Logger.warn "parammsss === #{inspect disb}"
       render(conn, "list_by_merchant.json", disb: disb)
   end
 
