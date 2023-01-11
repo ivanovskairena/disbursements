@@ -1,4 +1,4 @@
-# Solution - DisbursementsApp
+# DisbursementsApp
 
 To start your Phoenix server:
 
@@ -23,6 +23,24 @@ Used https://hexdocs.pm/phoenix/directory_structure.html
 # Code conventions
 Used https://hexdocs.pm/elixir/main/naming-conventions.html
 
+# Solution explanations
+- I have created one more model/controller Disbursements in order to store Disbursements that are created 
+ In the controller Disbursements I have inputed manually start_last_week and end_last_week because if I set up them as they should be there will be no data for checking as there are no orders in the past week.
+    start_f = ~D[2018-02-01]
+    end_f =  ~D[2018-02-07]
+   
+  So you can put period of time you want in order to calculcate the disbursment in the past.
+  - Also to make the calculation you need to go to the link http://localhost:4000/calculate or when you go in Disbursements just click on calculate disbursements and they will be calculated in background.
+  -
+   
+- After you will run the project you can access those pages by url or by jso
+1. Merchants
+3. Shoppers
+4. Orders
+5. Disbursements 
+
+For viewing json you can simply go thru /api for each of the pages and also you can use /api/swagger in order to test the json for
+/api/disbursements_by_merchant?merchant_id={merchant_id}&week={week} by entering the number of week and merchant_id
 
 
 # Backend coding challenge
