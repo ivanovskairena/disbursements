@@ -24,6 +24,21 @@ Used https://hexdocs.pm/phoenix/directory_structure.html
 Used https://hexdocs.pm/elixir/main/naming-conventions.html
 
 # Solution explanations
+
+- After you will run the project you can access those pages by url or by jso
+1. Merchants
+3. Shoppers
+4. Orders
+5. Disbursements 
+
+- For viewing json you can simply go thru /api for each of the pages and also you can use /api/swagger in order to test the json for
+/api/disbursements_by_merchant?merchant_id={merchant_id}&week={week} by entering the number of week and merchant_id
+   - Json swagger path: http://localhost:4000/api/swagger
+   - Other api paths: 
+      - http://localhost:4000/api/shoppers
+      - http://localhost:4000/api/merchants
+      - http://localhost:4000/api/orders
+      - http://localhost:4000/api/disbursements
 - I have created one more model/controller Disbursements in order to store Disbursements that are created 
  In the controller Disbursements I have inputed manually start_last_week and end_last_week because if I set up them as they should be there will be no data for checking as there are no orders in the past week.
     start_f = ~D[2018-02-01]
@@ -35,16 +50,6 @@ Used https://hexdocs.pm/elixir/main/naming-conventions.html
     - calc_amount() that calculate the fee for disbursement
     - calculate() that is doing the caclulations
 
-
-   
-- After you will run the project you can access those pages by url or by jso
-1. Merchants
-3. Shoppers
-4. Orders
-5. Disbursements 
-
-For viewing json you can simply go thru /api for each of the pages and also you can use /api/swagger in order to test the json for
-/api/disbursements_by_merchant?merchant_id={merchant_id}&week={week} by entering the number of week and merchant_id
 
 
 # Backend coding challenge
