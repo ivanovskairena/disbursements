@@ -1,0 +1,32 @@
+<h1>Show Disbursement</h1>
+
+<%= if @live_action in [:edit] do %>
+  <%= live_modal @socket, DisbursementsAppWeb.DisbursementLive.FormComponent,
+    id: @disbursement.id,
+    title: @page_title,
+    action: @live_action,
+    disbursement: @disbursement,
+    return_to: Routes.disbursement_show_path(@socket, :show, @disbursement) %>
+<% end %>
+
+<ul>
+
+  <li>
+    <strong>Year:</strong>
+    <%= @disbursement.year %>
+  </li>
+
+  <li>
+    <strong>Week:</strong>
+    <%= @disbursement.week %>
+  </li>
+
+  <li>
+    <strong>Amount:</strong>
+    <%= @disbursement.amount %>
+  </li>
+
+</ul>
+
+<span><%#= live_patch "Edit", to: Routes.disbursement_show_path(@socket, :edit, @disbursement), class: "button" %></span>
+<span><%= live_redirect "Back", to: Routes.disbursement_index_path(@socket, :index) %></span>

@@ -1,0 +1,54 @@
+<h1>Listing Disbursements</h1>
+
+
+<%= if @live_action in [:new, :edit] do %>
+  <%= live_modal @socket, DisbursementsAppWeb.DisbursementLive.FormComponent,
+    id: @disbursement.id || :new,
+    title: @page_title,
+    action: @live_action,
+    disbursement: @disbursement,
+    return_to: Routes.disbursement_index_path(@socket, :index) %>
+<% end %>
+
+<%= form_for @changeset, "#", [phx_change: "filter"], fn f -> %>
+
+  <%= label f, :week %>
+  <%= select f,:week, @weeks, prompt: "select" %>
+
+  <%= label f, :merchant_id %>
+  <%= select f, :merchant_id, @merchants, prompt: "select" %>
+
+
+<% end %>
+  <span><%= live_patch "Calculate Disbursements", to: Routes.disbursements_path(@socket, :calculate) %></span>
+
+
+
+<table>
+  <thead>
+    <tr>
+      <th>Year</th>
+      <th>Week</th>
+      <th>Amount</th>
+      <th>Merchant</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody id="disbursements">
+    <%= for disbursement <- @disbursements do %>
+      <tr id="disbursement-<%= disbursement.id %>">
+        <td><%= disbursement.year %></td>
+        <td><%= disbursement.week %></td>
+        <td><%= disbursement.amount %></td>
+        <td><%= disbursement.merchant.name %></td>
+        <td>
+          <span><%= live_redirect "Show", to: Routes.disbursement_show_path(@socket, :show, disbursement) %></span>
+          <span><%#= live_patch "Edit", to: Routes.disbursement_index_path(@socket, :edit, disbursement) %></span>
+          <span><%#= link "Delete", to: "#", phx_click: "delete", phx_value_id: disbursement.id, data: [confirm: "Are you sure?"] %></span>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<span><%#= live_patch "New Disbursement", to: Routes.disbursement_index_path(@socket, :new) %></span>

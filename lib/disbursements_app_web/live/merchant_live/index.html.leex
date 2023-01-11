@@ -1,0 +1,39 @@
+<h1>Listing Merchants</h1>
+
+<%= if @live_action in [:new, :edit] do %>
+  <%= live_modal @socket, DisbursementsAppWeb.MerchantLive.FormComponent,
+    id: @merchant.id || :new,
+    title: @page_title,
+    action: @live_action,
+    merchant: @merchant,
+    return_to: Routes.merchant_index_path(@socket, :index) %>
+<% end %>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Cif</th>
+
+      <th></th>
+    </tr>
+  </thead>
+  <tbody id="merchants">
+    <%= for merchant <- @merchants do %>
+      <tr id="merchant-<%= merchant.id %>">
+        <td><%= merchant.name %></td>
+        <td><%= merchant.email %></td>
+        <td><%= merchant.cif %></td>
+
+        <td>
+          <span><%= live_redirect "Show", to: Routes.merchant_show_path(@socket, :show, merchant) %></span>
+          <span><%= live_patch "Edit", to: Routes.merchant_index_path(@socket, :edit, merchant) %></span>
+          <span><%= link "Delete", to: "#", phx_click: "delete", phx_value_id: merchant.id, data: [confirm: "Are you sure?"] %></span>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<span><%= live_patch "New Merchant", to: Routes.merchant_index_path(@socket, :new) %></span>

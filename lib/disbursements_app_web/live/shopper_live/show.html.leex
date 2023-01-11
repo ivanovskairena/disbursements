@@ -1,0 +1,32 @@
+<h1>Show Shopper</h1>
+
+<%= if @live_action in [:edit] do %>
+  <%= live_modal @socket, DisbursementsAppWeb.ShopperLive.FormComponent,
+    id: @shopper.id,
+    title: @page_title,
+    action: @live_action,
+    shopper: @shopper,
+    return_to: Routes.shopper_show_path(@socket, :show, @shopper) %>
+<% end %>
+
+<ul>
+
+  <li>
+    <strong>Name:</strong>
+    <%= @shopper.name %>
+  </li>
+
+  <li>
+    <strong>Email:</strong>
+    <%= @shopper.email %>
+  </li>
+
+  <li>
+    <strong>Nif:</strong>
+    <%= @shopper.nif %>
+  </li>
+
+</ul>
+
+<span><%= live_patch "Edit", to: Routes.shopper_index_path(@socket, :edit, @shopper), class: "button" %></span>
+<span><%= live_redirect "Back", to: Routes.shopper_index_path(@socket, :index) %></span>

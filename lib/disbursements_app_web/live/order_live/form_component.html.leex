@@ -1,0 +1,22 @@
+<h2><%= @title %></h2>
+
+<%= f = form_for @changeset, "#",
+  id: "order-form",
+  phx_target: @myself,
+  phx_change: "validate",
+  phx_submit: "save" %>
+
+  <%= label f, :amount %>
+  <%= number_input f, :amount, step: "any" %>
+  <%= error_tag f, :amount %>
+
+  <%= label f, :created_at %>
+  <%= datetime_select f, :created_at %>
+  <%= error_tag f, :created_at %>
+
+  <%= label f, :completed_at %>
+  <%= datetime_select f, :completed_at %>
+  <%= error_tag f, :completed_at %>
+
+  <%= submit "Save", phx_disable_with: "Saving..." %>
+</form>

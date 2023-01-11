@@ -1,0 +1,39 @@
+<h1>Listing Shoppers</h1>
+
+<%= if @live_action in [:new, :edit] do %>
+  <%= live_modal @socket, DisbursementsAppWeb.ShopperLive.FormComponent,
+    id: @shopper.id || :new,
+    title: @page_title,
+    action: @live_action,
+    shopper: @shopper,
+    return_to: Routes.shopper_index_path(@socket, :index) %>
+<% end %>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Nif</th>
+
+      <th></th>
+    </tr>
+  </thead>
+  <tbody id="shoppers">
+    <%= for shopper <- @shoppers do %>
+      <tr id="shopper-<%= shopper.id %>">
+        <td><%= shopper.name %></td>
+        <td><%= shopper.email %></td>
+        <td><%= shopper.nif %></td>
+
+        <td>
+          <span><%= live_redirect "Show", to: Routes.shopper_show_path(@socket, :show, shopper) %></span>
+          <span><%= live_patch "Edit", to: Routes.shopper_index_path(@socket, :edit, shopper) %></span>
+          <span><%= link "Delete", to: "#", phx_click: "delete", phx_value_id: shopper.id, data: [confirm: "Are you sure?"] %></span>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<span><%= live_patch "New Shopper", to: Routes.shopper_index_path(@socket, :new) %></span>

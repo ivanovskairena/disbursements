@@ -1,0 +1,32 @@
+<h1>Show Merchant</h1>
+
+<%= if @live_action in [:edit] do %>
+  <%= live_modal @socket, DisbursementsAppWeb.MerchantLive.FormComponent,
+    id: @merchant.id,
+    title: @page_title,
+    action: @live_action,
+    merchant: @merchant,
+    return_to: Routes.merchant_show_path(@socket, :show, @merchant) %>
+<% end %>
+
+<ul>
+
+  <li>
+    <strong>Name:</strong>
+    <%= @merchant.name %>
+  </li>
+
+  <li>
+    <strong>Email:</strong>
+    <%= @merchant.email %>
+  </li>
+
+  <li>
+    <strong>Cif:</strong>
+    <%= @merchant.cif %>
+  </li>
+
+</ul>
+
+<span><%= live_patch "Edit", to: Routes.merchant_index_path(@socket, :edit, @merchant), class: "button" %></span>
+<span><%= live_redirect "Back", to: Routes.merchant_index_path(@socket, :index) %></span>

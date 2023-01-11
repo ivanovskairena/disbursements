@@ -1,0 +1,115 @@
+{
+  "consumes": [
+    "application/json"
+  ],
+  "definitions": {},
+  "host": "localhost:4000",
+  "info": {
+    "contact": {
+      "email": "irena@digitalpoint.mk",
+      "name": "Irena Ivanovska"
+    },
+    "description": "API Documentation for Disbursements API v1",
+    "title": "DisbursementsAPI",
+    "version": "1.0"
+  },
+  "paths": {
+    "/api/disbursements": {
+      "get": {
+        "description": "List all disbursements in the database",
+        "operationId": "DisbursementsAppWeb.DisbursementsController.index",
+        "parameters": [],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {},
+        "summary": "List all disbursements",
+        "tags": [
+          "Disbursements"
+        ]
+      }
+    },
+    "/api/disbursements_by_merchant?merchant_id={merchant_id}&week={week}": {
+      "get": {
+        "description": "List all disbursements by week and Merchant ID",
+        "operationId": "DisbursementsAppWeb.DisbursementsController.list_by_merchant_week",
+        "parameters": [
+          {
+            "description": "Merchant ID",
+            "in": "path",
+            "name": "merchant_id",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "Week",
+            "in": "path",
+            "name": "week",
+            "required": true,
+            "type": "integer"
+          }
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {},
+        "summary": "List disbursements by merchant ID and week",
+        "tags": [
+          "Disbursements"
+        ]
+      }
+    },
+    "/api/merchants": {
+      "get": {
+        "description": "List all merchants in the database",
+        "operationId": "DisbursementsAppWeb.MerchantsController.index",
+        "parameters": [],
+        "responses": {},
+        "summary": "List merchants",
+        "tags": [
+          "Merchants"
+        ]
+      }
+    },
+    "/api/orders": {
+      "get": {
+        "description": "List all orders in the database",
+        "operationId": "DisbursementsAppWeb.OrdersController.index",
+        "parameters": [],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {},
+        "summary": "List orders",
+        "tags": [
+          "Orders"
+        ]
+      }
+    },
+    "/api/shoppers": {
+      "get": {
+        "description": "List all shoppers in the database",
+        "operationId": "DisbursementsAppWeb.ShoppersController.index",
+        "parameters": [],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {},
+        "summary": "List shoppers",
+        "tags": [
+          "Shoppers"
+        ]
+      }
+    }
+  },
+  "produces": [
+    "application/json"
+  ],
+  "schemes": [
+    "http",
+    "https",
+    "ws",
+    "wss"
+  ],
+  "swagger": "2.0"
+}
