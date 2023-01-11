@@ -62,13 +62,16 @@ Used https://hexdocs.pm/elixir/main/naming-conventions.html
 
 # Improvements
 
-- Crontab
+## Crontab
+
 Adding task to the crontab to be performed all mondays
 
-- Log
+## Log
+
 A system to log the merchants processed and succesfull calculations.
 
-- API auth
+## API auth
+
 Add a token to API request
 
 # Backend coding challenge
