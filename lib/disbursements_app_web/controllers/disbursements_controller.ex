@@ -96,7 +96,7 @@ defmodule DisbursementsAppWeb.DisbursementsController do
 
     start_f = ~D[2018-02-01]
 
-    end_f =  ~D[2018-03-07]
+    end_f =  ~D[2018-02-07]
 
 
 
