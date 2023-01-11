@@ -52,12 +52,24 @@ Used https://hexdocs.pm/elixir/main/naming-conventions.html
     end_f =  ~D[2018-02-07]
    
   So you can put period of time you want in order to calculcate the disbursment in the past.
+  
   - Also to make the calculation you need to go to the link http://localhost:4000/calculate or when you go in Disbursements just click on calculate disbursements and they will be calculated in background.
   - There are two functions important for doing calculations
     - calc_amount() that calculate the fee for disbursement
-    - calculate() that is doing the caclulations
+    - calculate() that is doing the caclulations and make the scheduler for the period of calculations
+    
+- I decided to use decimal instead of floats type to have more precission and are used when dealing with money.
 
+# Improvements
 
+- Crontab
+Adding task to the crontab to be performed all mondays
+
+- Log
+A system to log the merchants processed and succesfull calculations.
+
+- API auth
+Add a token to API request
 
 # Backend coding challenge
 This is the coding challenge for people who applied to a backend developer position at SeQura. It's been designed to be a simplified version of the same problems we deal with.
