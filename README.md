@@ -34,6 +34,8 @@ Used https://hexdocs.pm/elixir/main/naming-conventions.html
 - For viewing json you can simply go thru /api for each of the pages and also you can use /api/swagger in order to test the json for
 /api/disbursements_by_merchant?merchant_id={merchant_id}&week={week} by entering the number of week and merchant_id
    - Json swagger path: http://localhost:4000/api/swagger
+      - /api/disbursements_by_merchant?merchant_id={merchant_id}&week={week}
+      ex. /api/disbursements_by_merchant?merchant_id=1&week=1
    - Other api paths: 
       - http://localhost:4000/api/shoppers
       - http://localhost:4000/api/merchants
