@@ -35,7 +35,9 @@ Used https://hexdocs.pm/elixir/main/naming-conventions.html
 /api/disbursements_by_merchant?merchant_id={merchant_id}&week={week} by entering the number of week and merchant_id
    - Json swagger path: http://localhost:4000/api/swagger
       - /api/disbursements_by_merchant?merchant_id={merchant_id}&week={week}
-      ex. /api/disbursements_by_merchant?merchant_id=1&week=1
+      
+      (ex. /api/disbursements_by_merchant?merchant_id=1&week=1)
+      
    - Other api paths: 
       - http://localhost:4000/api/shoppers
       - http://localhost:4000/api/merchants
