@@ -44,8 +44,11 @@ Used https://hexdocs.pm/elixir/main/naming-conventions.html
       - http://localhost:4000/api/orders
       - http://localhost:4000/api/disbursements
 - I have created one more model/controller Disbursements in order to store Disbursements that are created 
+ 
  In the controller Disbursements I have inputed manually start_last_week and end_last_week because if I set up them as they should be there will be no data for checking as there are no orders in the past week.
+   
     start_f = ~D[2018-02-01]
+    
     end_f =  ~D[2018-02-07]
    
   So you can put period of time you want in order to calculcate the disbursment in the past.
