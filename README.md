@@ -1,4 +1,4 @@
-# DisbursementsApp
+# Solution - DisbursementsApp
 
 To start your Phoenix server:
 
@@ -9,6 +9,9 @@ Now you can visit [`localhost:4000`](http://localhost:4000) from your browser.
 
 Ready to run in production? Please [check our deployment guides](https://hexdocs.pm/phoenix/deployment.html).
 
+# Code structure
+Used https://hexdocs.pm/phoenix/directory_structure.html
+
 ## Learn more
 
   * Official website: https://www.phoenixframework.org/
@@ -16,6 +19,11 @@ Ready to run in production? Please [check our deployment guides](https://hexdocs
   * Docs: https://hexdocs.pm/phoenix
   * Forum: https://elixirforum.com/c/phoenix-forum
   * Source: https://github.com/phoenixframework/phoenix
+  
+# Code conventions
+Used https://hexdocs.pm/elixir/main/naming-conventions.html
+
+
 
 # Backend coding challenge
 This is the coding challenge for people who applied to a backend developer position at SeQura. It's been designed to be a simplified version of the same problems we deal with.
